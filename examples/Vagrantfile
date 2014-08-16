@@ -1,11 +1,8 @@
 $install_repos = <<SCRIPT
-if ! [ -d "/opt/chef" ];
-then
     rpm -Uvh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el5.rf.x86_64.rpm 
     rpm -Uvh http://dl.fedoraproject.org/pub/epel/5/i386/epel-release-5-4.noarch.rpm
     rpm -Uvh http://packages.erlang-solutions.com/erlang-solutions-1.0-1.noarch.rpm
-fi
-yum install erlang
+    yum install erlang
 SCRIPT
 
 $install_chef = <<SCRIPT
