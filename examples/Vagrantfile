@@ -2,14 +2,14 @@ $install_repos = <<SCRIPT
     rpm -Uvh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm 
     rpm -Uvh http://dl.fedoraproject.org/pub/epel/5/i386/epel-release-5-4.noarch.rpm
     rpm -Uvh http://packages.erlang-solutions.com/erlang-solutions-1.0-1.noarch.rpm
-    yum install erlang
+    yum -y install erlang
 SCRIPT
 
 $install_chef = <<SCRIPT
 if ! [ -d "/opt/chef" ];
 then
-    yum update
-    yum install -y curl
+    yum -y update
+    yum -y install  curl
     curl -L https://www.opscode.com/chef/install.sh | bash
 fi
 SCRIPT
